@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kado Spesial Untukmu!</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Library Confetti dari CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <p class="instruction" id="instruction">Klik kotak kadonya untuk membuka! 🎁</p>
+        
+        <!-- Kotak Kado -->
+        <div class="gift-box" id="giftBox">
+            <div class="lid">
+                <div class="bow"></div>
+            </div>
+            <div class="box"></div>
+        </div>
+
+        <!-- Kartu Ucapan (Tersembunyi di awal) -->
+        <div class="card" id="birthdayCard">
+            <h1>🎉 Selamat Ulang Tahun! 🎉</h1>
+            <p class="name">Untuk [Nama Penerima]</p>
+            <p class="message">
+                Semoga panjang umur, sehat selalu, dan semua impianmu di tahun ini tercapai. 
+                Terima kasih sudah menjadi orang yang luar biasa!
+            </p>
+            <button id="confettiBtn">Rayakan Lagi! 🎊</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
