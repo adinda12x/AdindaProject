@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.instruction {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    animation: bounce 1.5s infinite;
+}
+
+/* Desain Kotak Kado */
+.gift-box {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gift-box:hover {
+    transform: scale(1.05);
+}
+
+.box {
+    width: 150px;
+    height: 120px;
+    background: #ff4757;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Pita Vertikal pada Kotak */
+.box::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    background: #ffa502;
+    left: 60px;
+}
+
+.lid {
+    width: 170px;
+    height: 35px;
+    background: #ff6b81;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 2;
+    transition: all 0.6s ease;
+}
+
+/* Pita pada Tutup */
+.lid::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    background: #ffa502;
+    left: 70px;
+}
+
+/* Pita Kupu-kupu di Atas */
+.bow {
+    position: absolute;
+    top: -20px;
+    left: 65px;
+    width: 40px;
+    height: 20px;
+    background: #ffa502;
+    border-radius: 50%;
+}
+
+/* Animasi Tutup Terbuka */
+.gift-box.open .lid {
+    transform: translateY(-80px) rotate(-15deg);
+    opacity: 0;
+}
+
+.gift-box.open {
+    pointer-events: none;
+}
+
+/* Desain Kartu Ucapan */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    max-width: 350px;
+    width: 90vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+}
+
+.card.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.card h1 {
+    color: #ff4757;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card .name {
+    font-weight: bold;
+    color: #2f3542;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.card .message {
+    color: #57606f;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #ff6b81;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
